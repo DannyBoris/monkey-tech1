@@ -12,6 +12,7 @@ const RidesList = ({ rideId, setRideId, _ref }) => {
           key={r.id}
           selectedRide={rideId === r.id}
           setRideId={setRideId}
+          ridesCount={rides.length}
           {...r}
         />
       ))}

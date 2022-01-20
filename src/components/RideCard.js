@@ -13,6 +13,7 @@ const RideCard = ({
   zone,
   selectedRide,
   setRideId,
+  ridesCount,
 }) => {
   const { name: zoneName, color } = zone;
   return (
@@ -20,6 +21,7 @@ const RideCard = ({
       selectedCard={selectedRide}
       onClick={() => setRideId(id)}
       frameColor={color}
+      disabledFlexGrow={ridesCount}
     >
       <ZoneName>{zoneName}</ZoneName>
       <Title>{name}</Title>
@@ -61,7 +63,7 @@ const StyledCard = styled.div`
   ${MOBILE_BREAKPOINT} {
     width: calc(50% - 12px);
   }
-  &:last-child {
+  &:nth-last-child(-n + ${(props) => props.disabledFlexGrow}) {
     flex-grow: 0;
   }
   &:before {
