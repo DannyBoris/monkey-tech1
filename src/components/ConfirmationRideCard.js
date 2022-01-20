@@ -48,15 +48,15 @@ const Details = ({ name, value }) => (
 );
 
 const Container = styled.div`
-  background: #373737;
   width: 100%;
+  background: #373737;
   height: 171px;
   position: relative;
   &:before {
     content: "";
     width: 100%;
     height: 6px;
-    background: ${(props) => props.frameColor || "red"};
+    background: ${(props) => props.frameColor};
     top: 0;
     left: 0;
     position: absolute;

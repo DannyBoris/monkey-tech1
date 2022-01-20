@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { ReactComponent as CheckIcon } from "../assets/ico-04.svg";
 import DetailsContainer from "../components/shared/DetailsContainer";
 import { MOBILE_BREAKPOINT } from "../utils";
-import ConfirmationRideCard from "./ConfirmationRideCard";
+import ConfirmationRideCard from "../components/ConfirmationRideCard";
 
 const ConfirmationPage = ({ history }) => {
   let currentRide = useSelector((state) => state.currentRide);

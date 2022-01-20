@@ -61,6 +61,9 @@ const StyledCard = styled.div`
   ${MOBILE_BREAKPOINT} {
     width: calc(50% - 12px);
   }
+  &:last-child {
+    flex-grow: 0;
+  }
   &:before {
     content: "";
     width: 100%;
