@@ -6,7 +6,7 @@ const ConfirmationRideCard = ({
   name,
   zone,
   return_time,
-  access_code = "JN-8080-8080-QQ",
+  access_code,
 }) => {
   return (
     <Container frameColor={zone.color}>

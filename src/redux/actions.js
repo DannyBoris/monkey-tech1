@@ -26,11 +26,12 @@ export const bookRide = (query, history) => (dispatch, getState) => {
         const newRide = {
           ...ride,
           remaining_tickets: ride.remaining_tickets - 1,
+          access_code
         };
 
         // set the confirmed ride in store
         dispatch({
-          type: "SET_CURRENT_RIDE",
+          type: SET_CURRENT_RIDE,
           payload: newRide,
         });
 

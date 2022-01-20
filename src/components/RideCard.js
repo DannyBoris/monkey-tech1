@@ -48,7 +48,7 @@ const Info = ({ Icon, text }) => (
 const StyledCard = styled.div`
   width: calc(25% - 12px);
   margin: 6px;
-  flex: 1 1 auto;
+  flex: 0 1 auto;
   flex-gap: 1px;
   box-sizing: border-box;
   height: 171px;
@@ -62,9 +62,6 @@ const StyledCard = styled.div`
   cursor: pointer;
   ${MOBILE_BREAKPOINT} {
     width: calc(50% - 12px);
-  }
-  &:nth-last-child(-n + ${(props) => props.disabledFlexGrow}) {
-    flex-grow: 0;
   }
   &:before {
     content: "";

@@ -48,13 +48,14 @@ const Homepage = ({ history, rides }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const selectedRide = rides.find((r) => r.id === data.ride_id);
+    console.log({rides})
+    const selectedRide = rides?.find((r) => r.id === data.ride_id);
     const currentHour = new Date().getHours();
     if (currentHour < 9 || currentHour > 19) handleError(ERRORS.PARK_CLOSED);
     else if (!data.pin) handleError(ERRORS.ENTER_PIN);
     else if (!isPinValid(data.pin)) handleError(ERRORS.INVALID_PIN);
     else if (!data.ride_id) handleError(ERRORS.CHOOSE_RIDE);
-    else if (selectedRide.remaining_tickets === 0)
+    else if (selectedRide?.remaining_tickets === 0)
       handleError(ERRORS.NO_TICKETS);
     else if (new Date(currentRide?.return_time) > new Date()) {
       handleError(ERRORS.RIDE_ALREADY_BOOKED);
@@ -88,7 +89,7 @@ const Homepage = ({ history, rides }) => {
         <Input
           onChange={(e) => setData({ ...data, pin: e.target.value })}
           placeholder="#PIN"
-          value={data.pin || "JN-8080-8080-QQ"}
+          value={data.pin}
           error={searchError}
         />
         <Button isVisible={isButtonVisible} type="submit">
@@ -142,7 +143,6 @@ const Input = styled.input`
 
 const Button = styled.button`
   flex: 0.25;
-  background: gray;
   color: white;
   font-weight: 700;
   border: none;

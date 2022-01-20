@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Switch, Route, withRouter } from "react-router-dom";
 import styled from "styled-components";
 import { fetchRides } from "../redux/actions";
@@ -9,16 +9,16 @@ import Homepage from "./Homepage";
 
 const Main = () => {
   const dispatch = useDispatch();
+  const rides = useSelector((state) => state.rides);
   useEffect(() => {
     dispatch(fetchRides());
   }, []);
-
 
   return (
     <Container>
       <Title>The Jungle FastRider Service</Title>
       <Switch>
-        <Route path="/" exact component={Homepage} />
+        <Route path="/" exact render={() => <Homepage rides={rides} />} />
         <Route path="/:id" exact component={ConfirmationPage} />
       </Switch>
     </Container>

@@ -10,7 +10,6 @@ const ConfirmationPage = ({ history }) => {
   let currentRide = useSelector((state) => state.currentRide);
   useEffect(() => {
     if (!currentRide) history.push("/");
-    else currentRide.access_token = localStorage.getItem("USER_PIN");
   }, []);
 
   return (
