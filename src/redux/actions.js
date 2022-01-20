@@ -2,6 +2,7 @@ import apiCall, { ENDPOINTS } from "../services/api";
 
 export const FETCH_RIDES = "FETCH_RIDES";
 export const UPDATE_RIDES = "UPDATE_RIDES";
+export const SET_CURRENT_RIDE = "SET_CURRENT_RIDE";
 const ridesActionCreator = ({ type, payload }) => ({ type, payload });
 
 export const fetchRides = () => (dispatch) => {

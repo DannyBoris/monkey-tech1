@@ -1,4 +1,4 @@
-import { FETCH_RIDES, UPDATE_RIDES } from "./actions";
+import { FETCH_RIDES, UPDATE_RIDES } from "../actions";
 
 const reducer = (state = [], action) => {
   switch (action.type) {

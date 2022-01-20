@@ -1,8 +1,8 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
-import rides from "./ridesReducer";
-import currentRide from "./currRideReducer";
+import rides from "./reducers/ridesReducer";
+import currentRide from "./reducers/currRideReducer";
 const reducer = combineReducers({
   rides,
   currentRide,
